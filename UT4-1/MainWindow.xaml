@@ -79,13 +79,15 @@
                 <CheckBox x:Name="bordeCheckBox" Grid.Column="1" Grid.Row="5"  Margin="0 10 0 0" IsChecked="True" />
             </Grid>
             
-            <Border BorderThickness="{Binding ElementName=bordeCheckBox, Path=IsChecked, Converter={StaticResource conversor}}" BorderBrush="Black" Width="{Binding ElementName=anchoSlider, Path=Value}" 
+            <Border BorderThickness="{Binding ElementName=bordeCheckBox, Path=IsChecked, Converter={StaticResource conversor}}" 
+                  BorderBrush="Black" 
+                  Width="{Binding ElementName=anchoSlider, Path=Value}" 
                   Height="{Binding ElementName=altoSlider, Path=Value}" 
                   Background="LightPink">
                 <Grid>
-                    <Image Source="{Binding ElementName=imagenTextBox, Path=Text, UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
-                    <TextBlock Text="{Binding ElementName=superiorTextBox, Path=Text, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource memeTexto}"/>
-                    <TextBlock VerticalAlignment="Bottom" Text="{Binding ElementName=inferiorTextBox, Path=Text, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource memeTexto}"/>
+                    <Image Source="{Binding ElementName=imagenTextBox, Path=Text}" Stretch="Fill" /> <!--updatesourcetrigger no hace falta ya que es de origen a destino-->
+                    <TextBlock Text="{Binding ElementName=superiorTextBox, Path=Text}" Style="{StaticResource memeTexto}"/>
+                    <TextBlock VerticalAlignment="Bottom" Text="{Binding ElementName=inferiorTextBox, Path=Text}" Style="{StaticResource memeTexto}"/>
                 </Grid>
             </Border>
         </StackPanel>
